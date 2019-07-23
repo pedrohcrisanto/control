@@ -23,7 +23,7 @@
   <tbody>
     <% @order_services.each do |order_service| %>
       <tr>
-        <td><%= order_service.service %></td>
+        <td><%= order_service.service.name %></td>
         <td><%= order_service.amount %></td>
         <td><%= order_service.employee %></td>
         <td><%= order_service.date %></td>
