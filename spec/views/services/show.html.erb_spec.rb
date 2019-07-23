@@ -5,7 +5,7 @@ RSpec.describe "services/show", type: :view do
     @service = assign(:service, Service.create!(
       :name => "Name",
       :description => "MyText",
-      :price => "9.99",
+      :prince => "9.99",
       :user => nil
     ))
   end

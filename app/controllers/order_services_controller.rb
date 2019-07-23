@@ -4,7 +4,7 @@ class OrderServicesController < ApplicationController
   # GET /order_services
   # GET /order_services.json
   def index
-    @order_services = OrderService.all
+    @order_services = OrderService.where(user_id: current_user.id).order(:id)
   end
 
   # GET /order_services/1
@@ -15,6 +15,7 @@ class OrderServicesController < ApplicationController
   # GET /order_services/new
   def new
     @order_service = OrderService.new
+
   end
 
   # GET /order_services/1/edit
@@ -24,7 +25,7 @@ class OrderServicesController < ApplicationController
   # POST /order_services
   # POST /order_services.json
   def create
-    @order_service = OrderService.new(order_service_params)
+    @order_service = OrderService.new(order_service_params.merge(user: current_user))
 
     respond_to do |format|
       if @order_service.save
@@ -69,6 +70,6 @@ class OrderServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_service_params
-      params.require(:order_service).permit(:service_id, :amount, :employee, :datestart, :dateend, :detail, :user_id)
+      params.require(:order_service).permit(:service_id, :amount, :employee, :date, :starttime, :endtime, :detail, :user_id)
     end
 end

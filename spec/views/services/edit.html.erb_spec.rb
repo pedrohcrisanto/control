@@ -5,7 +5,7 @@ RSpec.describe "services/edit", type: :view do
     @service = assign(:service, Service.create!(
       :name => "MyString",
       :description => "MyText",
-      :price => "9.99",
+      :prince => "9.99",
       :user => nil
     ))
   end
@@ -19,7 +19,7 @@ RSpec.describe "services/edit", type: :view do
 
       assert_select "textarea[name=?]", "service[description]"
 
-      assert_select "input[name=?]", "service[price]"
+      assert_select "input[name=?]", "service[prince]"
 
       assert_select "input[name=?]", "service[user_id]"
     end

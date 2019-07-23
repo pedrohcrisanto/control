@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :service_id %>
-    <%= form.text_field :service_id %>
+    <%= form.collection_select :service_id , Service.where(user_id: current_user.id), :id, :name, {} %>
   </div>
 
   <div class="field">
@@ -27,23 +27,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :datestart %>
-    <%= form.datetime_select :datestart %>
+    <%= form.label :date %>
+    <%= form.date_select :date %>
   </div>
 
   <div class="field">
-    <%= form.label :dateend %>
-    <%= form.datetime_select :dateend %>
+    <%= form.label :starttime %>
+    <%= form.time_select :starttime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endtime %>
+    <%= form.time_select :endtime %>
   </div>
 
   <div class="field">
     <%= form.label :detail %>
     <%= form.text_area :detail %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

@@ -4,8 +4,9 @@ class CreateOrderServices < ActiveRecord::Migration[5.2]
       t.references :service, foreign_key: true
       t.integer :amount
       t.string :employee
-      t.datetime :datestart
-      t.datetime :dateend
+      t.date :date
+      t.time :starttime
+      t.time :endtime
       t.text :detail
       t.references :user, foreign_key: true
 

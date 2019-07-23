@@ -4,7 +4,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @services = Service.where(user_id: current_user.id).order(:id)
   end
 
   # GET /services/1
@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service = Service.new(service_params)
+    @service = Service.new(service_params.merge(user: current_user))
 
     respond_to do |format|
       if @service.save
@@ -69,6 +69,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:name, :description, :price, :user_id)
+      params.require(:service).permit(:name, :description, :prince, :user_id)
     end
 end
