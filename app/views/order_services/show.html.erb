@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @order_service.service %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @order_service.amount %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @order_service.employee %>
+</p>
+
+<p>
+  <strong>Datestart:</strong>
+  <%= @order_service.datestart %>
+</p>
+
+<p>
+  <strong>Dateend:</strong>
+  <%= @order_service.dateend %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @order_service.detail %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order_service.user %>
+</p>
+
+<%= link_to 'Edit', edit_order_service_path(@order_service) %> |
+<%= link_to 'Back', order_services_path %>
