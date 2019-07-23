@@ -6,13 +6,13 @@ RSpec.describe "services/index", type: :view do
       Service.create!(
         :name => "Name",
         :description => "MyText",
-        :prince => "9.99",
+        :price => "9.99",
         :user => nil
       ),
       Service.create!(
         :name => "Name",
         :description => "MyText",
-        :prince => "9.99",
+        :price => "9.99",
         :user => nil
       )
     ])

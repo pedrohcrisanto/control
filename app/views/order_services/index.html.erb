@@ -13,6 +13,9 @@
       <th>Endtime</th>
       <th>Detail</th>
       <th>User</th>
+      <th>Totalvalue</th>
+      <th>Liquidvalue</th>
+      <th>Discount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +31,9 @@
         <td><%= order_service.endtime %></td>
         <td><%= order_service.detail %></td>
         <td><%= order_service.user %></td>
+        <td><%= order_service.totalvalue %></td>
+        <td><%= order_service.liquidvalue %></td>
+        <td><%= order_service.discount %></td>
         <td><%= link_to 'Show', order_service %></td>
         <td><%= link_to 'Edit', edit_order_service_path(order_service) %></td>
         <td><%= link_to 'Destroy', order_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>

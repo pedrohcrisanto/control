@@ -7,7 +7,10 @@ RSpec.describe "order_services/new", type: :view do
       :amount => 1,
       :employee => "MyString",
       :detail => "MyText",
-      :user => nil
+      :user => nil,
+      :totalvalue => "9.99",
+      :liquidvalue => "9.99",
+      :discount => "9.99"
     ))
   end
 
@@ -25,6 +28,12 @@ RSpec.describe "order_services/new", type: :view do
       assert_select "textarea[name=?]", "order_service[detail]"
 
       assert_select "input[name=?]", "order_service[user_id]"
+
+      assert_select "input[name=?]", "order_service[totalvalue]"
+
+      assert_select "input[name=?]", "order_service[liquidvalue]"
+
+      assert_select "input[name=?]", "order_service[discount]"
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_174300) do
+ActiveRecord::Schema.define(version: 2019_07_23_195636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 2019_07_23_174300) do
     t.time "endtime"
     t.text "detail"
     t.bigint "user_id"
+    t.decimal "totalvalue"
+    t.decimal "liquidvalue"
+    t.decimal "discount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["service_id"], name: "index_order_services_on_service_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_174300) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.decimal "prince"
+    t.decimal "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

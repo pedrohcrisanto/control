@@ -9,6 +9,9 @@ class CreateOrderServices < ActiveRecord::Migration[5.2]
       t.time :endtime
       t.text :detail
       t.references :user, foreign_key: true
+      t.decimal :totalvalue
+      t.decimal :liquidvalue
+      t.decimal :discount
 
       t.timestamps
     end

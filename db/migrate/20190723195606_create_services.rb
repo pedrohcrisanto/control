@@ -3,7 +3,7 @@ class CreateServices < ActiveRecord::Migration[5.2]
     create_table :services do |t|
       t.string :name
       t.text :description
-      t.decimal :prince
+      t.decimal :price
       t.references :user, foreign_key: true
 
       t.timestamps

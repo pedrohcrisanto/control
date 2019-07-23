@@ -15,7 +15,6 @@ class OrderServicesController < ApplicationController
   # GET /order_services/new
   def new
     @order_service = OrderService.new
-
   end
 
   # GET /order_services/1/edit
@@ -70,6 +69,6 @@ class OrderServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_service_params
-      params.require(:order_service).permit(:service_id, :amount, :employee, :date, :starttime, :endtime, :detail, :user_id)
+      params.require(:order_service).permit(:service_id, :amount, :employee, :date, :starttime, :endtime, :detail, :user_id, :totalvalue, :liquidvalue, :discount)
     end
 end
