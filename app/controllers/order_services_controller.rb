@@ -19,17 +19,6 @@ class OrderServicesController < ApplicationController
 
   # GET /order_services/1/edit
   def edit
-    @order_service.totalvalue = @order_service.amount * @order_service.service.price
-    if @order_service.amount >= 10
-      @order_service.discount = 0.1
-  end
-  if @order_service.amount >= 20
-    @order_service.discount = 0.2
-end
-if @order_service.amount >= 30 
-  @order_service.discount = 0.3
-end
-@order_service.liquidvalue = @order_service.totalvalue - (@order_service.totalvalue * @order_service.discount)
 
   end
 

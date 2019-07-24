@@ -21,7 +21,7 @@
   </thead>
 
   <tbody>
-    <% @order_services.each do |order_service| %>
+    <% @order_services.each do |order_service|%>
       <tr>
         <td><%= order_service.service.name %></td>
         <td><%= order_service.amount %></td>
@@ -30,10 +30,21 @@
         <td><%= order_service.starttime %></td>
         <td><%= order_service.endtime %></td>
         <td><%= order_service.detail %></td>
-        <td><%= order_service.user %></td>
+        <td><%= order_service.user.email %></td>
         <td><%= order_service.totalvalue %></td>
         <td><%= order_service.liquidvalue %></td>
-        <td><%= order_service.discount %></td>
+        <td><%=
+          case order_service.discount
+          when 0.1
+          '10%'
+          when 0.2
+          '20%'
+          when 0.3
+          '30%'
+          else
+          '0%'
+          end
+        %></td>
         <td><%= link_to 'Show', order_service %></td>
         <td><%= link_to 'Edit', edit_order_service_path(order_service) %></td>
         <td><%= link_to 'Destroy', order_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -23,6 +23,9 @@ class OrderService < ApplicationRecord
       self.liquidvalue = self.totalvalue - (self.totalvalue * self.discount)
     end
   end
-
+def total_values
+  order_service.each {|p| total += p.totalvalue }
+  return total
+end
 
 end
