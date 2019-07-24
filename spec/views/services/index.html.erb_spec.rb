@@ -7,13 +7,13 @@ RSpec.describe "services/index", type: :view do
         :name => "Name",
         :description => "MyText",
         :price => "9.99",
-        :user => nil
+        :user => rand(1..5)
       ),
       Service.create!(
         :name => "Name",
         :description => "MyText",
         :price => "9.99",
-        :user => nil
+        :user => rand(1..5)
       )
     ])
   end
@@ -23,6 +23,6 @@ RSpec.describe "services/index", type: :view do
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
     assert_select "tr>td", :text => "9.99".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => rand(1..5).to_s, :count => 2
   end
 end

@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe "order_services/show", type: :view do
   before(:each) do
     @order_service = assign(:order_service, OrderService.create!(
-      :service => nil,
+      :service => rand(1..5),
       :amount => 2,
       :employee => "Employee",
       :detail => "MyText",
-      :user => nil,
+      :user => rand(1..5),
       :totalvalue => "9.99",
       :liquidvalue => "9.99",
       :discount => "9.99"

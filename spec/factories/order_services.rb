@@ -1,15 +1,15 @@
 FactoryBot.define do
   factory :order_service do
-    service { nil }
-    amount { 1 }
-    employee { "MyString" }
-    date { "2019-07-23" }
-    starttime { "2019-07-23 19:56:36" }
-    endtime { "2019-07-23 19:56:36" }
-    detail { "MyText" }
-    user { nil }
-    totalvalue { "9.99" }
-    liquidvalue { "9.99" }
-    discount { "9.99" }
+    service { rand(1..5) }
+    amount { Faker::Number.number(10) }
+    employee { Faker::Name.name }
+    date { Faker::Date.between(2.days.ago, Date.today) }
+    starttime { Faker::Time.between(DateTime.now - 1, DateTime.now) }
+    endtime { Faker::Time.between(DateTime.now - 1, DateTime.now) }
+    detail { Faker::Lorem.sentence(3) }
+    user { rand(1..5) }
+    totalvalue { Faker::Number.decimal(5) }
+    liquidvalue { Faker::Number.decimal(5)}
+    discount { Faker::Number.decimal(1) }
   end
 end

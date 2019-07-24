@@ -29,11 +29,11 @@ RSpec.describe ServicesController, type: :controller do
   # Service. As you add validations to Service, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip(:service)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip(:order_service)
   }
 
   # This should return the minimal set of values that should be in the session

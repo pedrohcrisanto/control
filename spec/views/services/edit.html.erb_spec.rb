@@ -6,7 +6,7 @@ RSpec.describe "services/edit", type: :view do
       :name => "MyString",
       :description => "MyText",
       :price => "9.99",
-      :user => nil
+      :user => rand(1..5)
     ))
   end
 
