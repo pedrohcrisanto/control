@@ -4,12 +4,60 @@
     <title>Control</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="/">
+<%= image_tag("logo.jpg", :alt => "mirtilo", :height=>"30", :class => "d-inline-block align-top") %>
+Control Admin
+</a>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/order_services">Ordem de Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/services">Serviços</a>
+      </li>
+      
+    </ul>
+    <span class="navbar-right">
+<% if user_signed_in? %>
+                   
+      Logado como: 
+  <strong><%= current_user.email %></strong> 
+
+  <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'btn' %> 
+  <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn'  %>
+                    <% else %>
+                     
+                        <%= link_to 'Entrar', new_user_session_path, :class => 'btn' %> 
+                   
+                    <% end %>
+    </span>
+  </div>
+</nav>
+</header>
   <body>
     <%= yield %>
   </body>
+  <footer>
+  <footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright
+    <a href="https://www.control.eng.br//"> Control Engenharia</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+  </footer>
 </html>
