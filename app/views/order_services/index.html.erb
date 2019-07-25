@@ -74,5 +74,6 @@
     </div>
 
     <%= paginate @order_services, theme: 'twitter-bootstrap-4'%>
-        <%= link_to 'Nova Ordem de Serviço',  new_order_service_path , class:'btn btn-success'%>
+    <%= link_to 'Criar Ordem de Serviço',  new_order_service_path , class:'btn btn-success'%>
+  <%= link_to "Exportar para Excel", order_services_path(format: "xls") , class:'btn btn-primary'%>
 </div>

@@ -5,6 +5,12 @@ class OrderServicesController < ApplicationController
   # GET /order_services.json
   def index
     @order_services = OrderService.where(user_id: current_user.id).order(:id).page params[:page]
+    @order_services_xls = OrderService.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @order_services_xls.to_csv }
+      format.xls { send_data @order_services_xls.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /order_services/1

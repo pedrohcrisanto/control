@@ -1,0 +1,42 @@
+
+
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="Number">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Serviço</Data></Cell>
+        <Cell><Data ss:Type="Number">Quantidade</Data></Cell>
+        <Cell><Data ss:Type="String">Funcionario</Data></Cell>
+        <Cell><Data ss:Type="Date">Data</Data></Cell>
+        <Cell><Data ss:Type="Time">Hora inicio</Data></Cell>
+        <Cell><Data ss:Type="Time">Hora fim</Data></Cell>
+        <Cell><Data ss:Type="String">Detalhe</Data></Cell>
+        <Cell><Data ss:Type="Number">Valor Total</Data></Cell>
+        <Cell><Data ss:Type="Number">Desconto</Data></Cell>
+        <Cell><Data ss:Type="Number">Valor Final</Data></Cell>
+      </Row>
+    <% @order_services.each do |order_service| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= order_service.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order_service.service.name %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order_service.amount %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order_service.employee %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= order_service.date %></Data></Cell>
+        <Cell><Data ss:Type="Time"><%= order_service.starttime %></Data></Cell>
+        <Cell><Data ss:Type="Time"><%= order_service.endtime %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order_service.detail %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order_service.totalvalue %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order_service.discount %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order_service.liquidvalue %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
