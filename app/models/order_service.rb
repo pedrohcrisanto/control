@@ -27,5 +27,5 @@ def total_values
   order_service.each {|p| total += p.totalvalue }
   return total
 end
-
+paginates_per 10
 end

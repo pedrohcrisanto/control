@@ -1,31 +1,44 @@
-<p id="notice"><%= notice %></p>
-<div class=>
-<h1 class="text-center">Ordem de Serviços</h1>
-<div class="container-fluid">
-<div class="table-responsive">
-<table class="table table-bordered table-striped table-hover table-sm">
-  <thead class="thead-dark">
-    <tr>
-      <th>#</th>
-      <th>Serviço</th>
-      <th>Valor Unitário</th>
-      <th>Qtd</th>
-      <th>Valor Total</th>
-      <th>Desconto</th>
-      <th>Valor Final</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<p id="notice">
+    <%= notice %>
+</p>
+<h1 class="text-center ">Ordem de Serviços</h1>
+<br>
+<div class="container-fluid ">
+    <div class="table-responsive ">
+        <table class="table table-bordered table-striped table-hover table-sm ">
+            <thead class="thead-dark ">
+                <tr>
+                    <th>#</th>
+                    <th>Serviço</th>
+                    <th>Valor Unitário</th>
+                    <th>Qtd</th>
+                    <th>Valor Total</th>
+                    <th>Desconto</th>
+                    <th>Valor Final</th>
+                    <th colspan="3 "></th>
+                </tr>
+            </thead>
 
-  <tbody>
-    <% @order_services.each do |order_service|%>
-      <tr>
-        <td><%= order_service.id %></td>
-        <td><%= order_service.service.name %></td>
-        <td>R$<%= order_service.service.price %></td>
-        <td><%= order_service.amount %></td>
-        <td>R$<%= order_service.totalvalue %></td>
-        <td><%= 
+            <tbody>
+                <% @order_services.each do |order_service|%>
+                    <tr>
+                        <td>
+                            <%= order_service.id %>
+                        </td>
+                        <td>
+                            <%= order_service.service.name %>
+                        </td>
+                        <td>R$
+                            <%= order_service.service.price %>
+                        </td>
+                        <td>
+                            <%= order_service.amount %>
+                        </td>
+                        <td>R$
+                            <%= order_service.totalvalue %>
+                        </td>
+                        <td>
+                            <%= 
           case order_service.discount
           when 0.1
           '10%'
@@ -34,21 +47,28 @@
           when 0.3
           '30%'
           else
-          '0%'
+          'Sem Desconto'
           end
         %>
-        </td>
-        <td>R$<%= order_service.liquidvalue %></td>
-        <td><%= link_to 'Detalhes', order_service %></td>
-        <td><%= link_to 'Editar', edit_order_service_path(order_service) %></td>
-        <td><%= link_to 'Remover', order_service, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<br>
-<%= link_to 'Nova Ordem de Serviço',  new_order_service_path , class:'btn btn-primary'%>
-</div>
+                        </td>
+                        <td>R$
+                            <%= order_service.liquidvalue %>
+                        </td>
+                        <td>
+                            <%= link_to 'Detalhes', order_service %>
+                        </td>
+                        <td>
+                            <%= link_to 'Editar', edit_order_service_path(order_service) %>
+                        </td>
+                        <td>
+                            <%= link_to 'Remover', order_service, method: :delete, data: { confirm: 'Tem certeza?' } %>
+                        </td>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>
+    </div>
 
-
+    <%= paginate @order_services, theme: 'twitter-bootstrap-4'%>
+        <%= link_to 'Nova Ordem de Serviço',  new_order_service_path , class:'btn btn-success'%>
+</div>

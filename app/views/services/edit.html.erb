@@ -1,6 +1,8 @@
-<h1>Editing Service</h1>
+<div class="container-fluid">
+    <h1 class="text-center">Editando Serviço</h1>
+    <div class="container">
+        <%= render 'form', service: @service %>
 
-<%= render 'form', service: @service %>
-
-<%= link_to 'Show', @service %> |
-<%= link_to 'Back', services_path %>
+                <%= link_to 'Voltar', services_path %>
+    </div>
+</div>

@@ -39,7 +39,7 @@ Control Admin
   <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn'  %>
                     <% else %>
                      
-                        <%= link_to 'Entrar', new_user_session_path, :class => 'btn' %> 
+               
                    
                     <% end %>
     </span>
@@ -47,17 +47,18 @@ Control Admin
 </nav>
 </header>
   <body>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
-  <footer>
-  <footer class="page-footer font-small blue">
+<!-- Footer -->
+<footer class="page-footer font-small footer">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright
-    <a href="https://www.control.eng.br//"> Control Engenharia</a>
+  <div class="footer-copyright text-center py-3">© Teste Control Engenharia
+    <br><a class="link-footer" href="https://pedrocrisanto.tech">Pedro Crisanto</a>
   </div>
   <!-- Copyright -->
 
 </footer>
-  </footer>
 </html>

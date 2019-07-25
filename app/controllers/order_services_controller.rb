@@ -4,7 +4,7 @@ class OrderServicesController < ApplicationController
   # GET /order_services
   # GET /order_services.json
   def index
-    @order_services = OrderService.where(user_id: current_user.id).order(:id)
+    @order_services = OrderService.where(user_id: current_user.id).order(:id).page params[:page]
   end
 
   # GET /order_services/1

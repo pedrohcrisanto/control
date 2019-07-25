@@ -1,59 +1,93 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Service:</strong>
-  <%= @order_service.service %>
+<p id="notice">
+    <%= notice %>
 </p>
-
-<p>
-  <strong>Amount:</strong>
+<br>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h2 class="text-center">Detalhes do Serviço<h2>
+  </li>
+  <li class="list-group-item ">
+   <h5>
+  <strong>Serviço:</strong>
+  <%= @order_service.service.name %>
+  </h5>
+  </li>
+  <li class="list-group-item">
+    <h5>
+  <strong>Quantidade:</strong>
   <%= @order_service.amount %>
-</p>
-
-<p>
-  <strong>Employee:</strong>
+  </h5>
+  </li>
+  <li class="list-group-item">
+    <h5>
+    <strong>Preço:</strong>
+  R$<%= @order_service.service.price %>
+  <h5>
+  </li>
+    <li class="list-group-item">
+    <h5>
+  <strong>Funcionario:</strong>
   <%= @order_service.employee %>
-</p>
-
-<p>
-  <strong>Date:</strong>
+  <h5>
+  </li>
+    <li class="list-group-item">
+    <h5>
+  <strong>Data:</strong>
   <%= @order_service.date %>
-</p>
-
-<p>
-  <strong>Starttime:</strong>
+  <h5>
+  </li>
+    <li class="list-group-item">
+    <h5>
+  <strong>Hora Inicio:</strong>
   <%= @order_service.starttime %>
-</p>
-
-<p>
-  <strong>Endtime:</strong>
+  <h5>
+  </li>
+      <li class="list-group-item">
+    <h5>
+  <strong>Hora Final:</strong>
   <%= @order_service.endtime %>
-</p>
-
-<p>
-  <strong>Detail:</strong>
+  <h5>
+  </li>
+      <li class="list-group-item">
+    <h5>
+  <strong>Detalhes:</strong>
   <%= @order_service.detail %>
-</p>
+  <h5>
+  </li>
+        <li class="list-group-item">
+    <h5>
+  <strong>Valor Total:</strong>
+  R$<%= @order_service.totalvalue %>
+  <h5>
+  </li>
+        <li class="list-group-item">
+    <h5>
+  <strong>Valor Liquido:</strong>
+  R$<%= @order_service.liquidvalue %>
+  <h5>
+  </li>
+        <li class="list-group-item">
+    <h5>
+  <strong>Desconto:</strong>
+  <%= 
+          case @order_service.discount
+          when 0.1
+          '10%'
+          when 0.2
+          '20%'
+          when 0.3
+          '30%'
+          else
+          'Sem desconto'
+          end
+        %>
+  <h5>
+  </li>
+</ul>
+<br>
 
-<p>
-  <strong>User:</strong>
-  <%= @order_service.user %>
-</p>
 
-<p>
-  <strong>Totalvalue:</strong>
-  <%= @order_service.totalvalue %>
-</p>
-
-<p>
-  <strong>Liquidvalue:</strong>
-  <%= @order_service.liquidvalue %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= @order_service.discount %>
-</p>
-
-<%= link_to 'Edit', edit_order_service_path(@order_service) %> |
-<%= link_to 'Back', order_services_path %>
+<%= link_to 'Voltar', order_services_path , class:'btn btn-primary'%>
+<%= link_to 'Editar', edit_order_service_path(@order_service) , class:'btn btn-primary'%> 
+</div>

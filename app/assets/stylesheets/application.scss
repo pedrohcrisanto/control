@@ -1,3 +1,14 @@
 @import "bootstrap/dist/css/bootstrap.css";
 
 $brand-primary: #004583;
+
+.footer{
+    margin-top: 2%;
+    background-color: $brand-primary;
+    color: white;
+}
+.link-footer{
+    color: white;
+}
+
+

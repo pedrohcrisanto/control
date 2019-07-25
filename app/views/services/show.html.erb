@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+    <%= notice %>
+</p>
+<br>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h2 class="text-center">Detalhes do Serviço<h2>
+  </li>
+  <li class="list-group-item ">
+   <h4>
+    <strong>Nome:</strong>
 
-<p>
-  <strong>Name:</strong>
   <%= @service.name %>
-</p>
+  </h4>
+  </li>
+  <li class="list-group-item">
+    <h4>
+    <strong>Descrição:</strong>
 
-<p>
-  <strong>Description:</strong>
   <%= @service.description %>
-</p>
+  </h4>
+  </li>
+  <li class="list-group-item">
+    <h4>
+    <strong>Preço:</strong>
+  R$<%= @service.price %>
+  <h4>
+  </li>
+</ul>
+<br>
+<%= link_to 'Voltar', services_path , class:'btn btn-primary'%>
+<%= link_to 'Editar', edit_service_path(@service), class:'btn btn-primary' %> 
 
-<p>
-  <strong>Price:</strong>
-  <%= @service.price %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @service.user %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+</div>
