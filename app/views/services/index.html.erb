@@ -1,6 +1,3 @@
-<p id="notice">
-    <%= notice %>
-</p>
 
 <h1 class="text-center">Listagem de Serviços</h1>
 <div class="container-fluid">
@@ -28,21 +25,27 @@
                             R$
                             <%= service.price %>
                         </td>
-                        <td>
-                            <%= link_to 'Detalhes', service %>
+                        <td class="col-xs-1">
+                            <%= link_to  service do %>
+                            <i class="fa fa-sm fa-eye"></i>
+                            <% end%>
                         </td>
-                        <td>
-                            <%= link_to 'Editar', edit_service_path(service) %>
+                        <td class="col-xs-1">
+                            <%= link_to  edit_service_path(service) do %>
+                            <i class="fa fa-sm fa-edit"></i>
+                            <% end %>
                         </td>
-                        <td>
-                            <%= link_to 'Remover', service, method: :delete, data: { confirm: 'Tem certeza?' } %>
+                        <td class="col-xs-1">
+                            <%= link_to service, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+                             <i class="fa fa-sm fa-trash"></i>
+                            <% end %>
                         </td>
                     </tr>
                     <% end %>
             </tbody>
         </table>
     </div>
-    <br>
+
     <%= paginate @services, theme: 'twitter-bootstrap-4'%>
         <%= link_to 'Novo Serviço', new_service_path, class:'btn btn-success' %>
 </div>

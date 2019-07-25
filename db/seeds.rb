@@ -10,7 +10,7 @@ User.create  email: 'admin@control.eng.br', password: 123456
       )
     end
 
-20.times do |i|
+15.times do |i|
     OrderService.create!(
       service: Service.all.sample ,
       amount: rand(1..40),

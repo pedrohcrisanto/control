@@ -47,7 +47,7 @@ class OrderServicesController < ApplicationController
     
   respond_to do |format|
       if @order_service.save
-        format.html { redirect_to @order_service, notice: 'Order service was successfully created.' }
+        format.html { redirect_to @order_service, notice: 'Ordem de Serviço criada com sucesso!' }
         format.json { render :show, status: :created, location: @order_service }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class OrderServicesController < ApplicationController
   def update
     respond_to do |format|
       if @order_service.update(order_service_params)
-        format.html { redirect_to @order_service, notice: 'Order service was successfully updated.' }
+        format.html { redirect_to @order_service, notice: 'Ordem de Serviço atualizada com sucesso!' }
         format.json { render :show, status: :ok, location: @order_service }
       else
         format.html { render :edit }
@@ -75,7 +75,7 @@ class OrderServicesController < ApplicationController
   def destroy
     @order_service.destroy
     respond_to do |format|
-      format.html { redirect_to order_services_url, notice: 'Order service was successfully destroyed.' }
+      format.html { redirect_to order_services_url, notice: 'Ordem de Serviço removida com sucesso!' }
       format.json { head :no_content }
     end
   end

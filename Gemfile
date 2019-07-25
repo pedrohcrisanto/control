@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'i18n'
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 5.1'
+gem "font-awesome-rails"
 gem 'devise-i18n'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'

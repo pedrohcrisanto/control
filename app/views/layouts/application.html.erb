@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Control</title>
+    <title>Control Admin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,6 +50,9 @@ Control Admin
 </header>
   <body>
     <div class="container">
+       <div class="container text-center alerta">
+      <%= flash_messages %>
+      </div>
     <%= yield %>
     </div>
   </body>

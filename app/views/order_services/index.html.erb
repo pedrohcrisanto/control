@@ -1,6 +1,4 @@
-<p id="notice">
-    <%= notice %>
-</p>
+
 <h1 class="text-center ">Ordem de Serviços</h1>
 <br>
 <div class="container-fluid ">
@@ -47,21 +45,27 @@
           when 0.3
           '30%'
           else
-          'Sem Desconto'
+          '0%'
           end
         %>
                         </td>
                         <td>R$
                             <%= order_service.liquidvalue %>
                         </td>
-                        <td>
-                            <%= link_to 'Detalhes', order_service %>
+                        <td class="col-xs-1">
+                            <%= link_to order_service do%>
+                             <i class="fa fa-eye fa-sm"></i>
+                            <% end %>
                         </td>
-                        <td>
-                            <%= link_to 'Editar', edit_order_service_path(order_service) %>
+                        <td class="col-xs-1">
+                            <%= link_to  edit_order_service_path(order_service) do %>
+                            <i class="fa fa-sm fa-edit"></i>
+                            <% end %>
                         </td>
-                        <td>
-                            <%= link_to 'Remover', order_service, method: :delete, data: { confirm: 'Tem certeza?' } %>
+                        <td class="col-xs-1">
+                            <%= link_to order_service, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+                            <i class="fa fa-sm fa-trash"></i>
+                            <% end %>
                         </td>
                     </tr>
                     <% end %>
