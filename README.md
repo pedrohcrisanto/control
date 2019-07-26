@@ -17,7 +17,7 @@ Crie o banco, migre as tabelas e logo após popule o banco de dados<br>
 ```sh
 $ sudo docker-compose run --rm app bundle exec rails db:create db:migrate db:seed 
 ```
-<strong>(login:admin@control.eng.br', password:'123456')</strong> 
+<strong>(login:admin@control.eng.br', password:<small>'123456'</small>)</strong> 
 
 Rode a aplicação
 ```sh
