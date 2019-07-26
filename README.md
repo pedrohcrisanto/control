@@ -31,4 +31,6 @@ $ sudo docker-compose run --rm app bundle exec rspec
 ```
 ## Deploy no Heroku
 
+https://controleng.herokuapp.com/
 
+Utilize 'admin@control.eng.br' '123456' para visualizar um banco de dados populado, caso contrario crie uma conta.
