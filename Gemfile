@@ -38,7 +38,6 @@ gem "font-awesome-rails"
 gem 'devise-i18n'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
-gem 'bootstrap_helper'
 gem 'bootstrap', '~> 4.3.1'
 gem "faker"
 # Reduces boot times through caching; required in config/boot.rb
