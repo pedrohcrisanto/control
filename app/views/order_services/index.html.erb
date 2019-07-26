@@ -76,4 +76,27 @@
     <%= paginate @order_services, theme: 'twitter-bootstrap-4'%>
     <%= link_to 'Criar Ordem de Serviço',  new_order_service_path , class:'btn btn-success'%>
   <%= link_to "Exportar para Excel", order_services_path(format: "xls") , class:'btn btn-primary'%>
+<br>
+<br>
+<h5>Soma de Valores Totais =>
+<strong>R$ <%=  
+total = 0
+@order_services.each do |value|
+  total += value.totalvalue
+end
+
+p total
+%></strong>
+<h5>
+
+<h5>Soma de Valores Finais =>
+<strong>R$ <%=  
+total = 0
+@order_services.each do |value|
+  total += value.liquidvalue
+end
+
+p total
+%></strong>
+<h5>
 </div>

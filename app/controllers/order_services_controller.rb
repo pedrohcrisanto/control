@@ -8,7 +8,6 @@ class OrderServicesController < ApplicationController
     @order_services_xls = OrderService.where(user_id: current_user.id)
     respond_to do |format|
       format.html
-      format.csv { send_data @order_services_xls.to_csv }
       format.xls { send_data @order_services_xls.to_csv(col_sep: "\t") }
     end
   end
