@@ -13,7 +13,8 @@ $ cd /control/
 $ sudo docker-compose run --rm app bundle install
 ```
 
-Crie o banco, migre as tabelas e logo após popule o banco de dados(login:'admin@control.eng.br', senha:'123456') 
+Crie o banco, migre as tabelas e logo após popule o banco de dados
+(login:admin@control.eng.br', senha:'123456') 
 ```sh
 $ sudo docker-compose run --rm app bundle exec rails db:create db:migrate db:seed 
 ```
@@ -33,4 +34,3 @@ $ sudo docker-compose run --rm app bundle exec rspec
 
 https://controleng.herokuapp.com/
 
-Utilize 'admin@control.eng.br' '123456' para visualizar um banco de dados populado, caso contrario crie uma conta.
