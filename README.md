@@ -13,8 +13,8 @@ $ cd /control/
 $ sudo docker-compose run --rm app bundle install
 ```
 
-Crie o banco, migre as tabelas e logo após popule o banco de dados.<br>
-(login:admin@control.eng.br', senha:'123456') 
+Crie o banco, migre as tabelas e logo após popule o banco de dados<br>
+<strong>(login:admin@control.eng.br', senha:'123456')</strong> 
 ```sh
 $ sudo docker-compose run --rm app bundle exec rails db:create db:migrate db:seed 
 ```
